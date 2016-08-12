@@ -104,6 +104,9 @@ func NewDecoder(r io.Reader) (*Decoder, error) {
 	return dec, nil
 }
 
+// TODO: use a config-opt instead?
+//   NewDecoder(r, Order(binary.LittleEndian), Dims(1,2,3), Elem(0.0)) (*Decoder, error)
+
 func NewDecoderFrom(r io.Reader, hdr Header) *Decoder {
 	return &Decoder{
 		r:   r,
